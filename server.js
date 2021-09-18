@@ -2,7 +2,7 @@ const http = require('http');
 const express = require('express');
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
 const bodyParser = require('body-parser');
-
+const quotes = require("./quotes/fetch_quotes.js")
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
