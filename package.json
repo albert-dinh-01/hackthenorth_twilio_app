@@ -1,0 +1,28 @@
+{
+  "name": "hackthenorth_twilio_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "http": "^0.0.1-security",
+    "request": "^2.88.2",
+    "twilio": "^3.67.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albert-dinh-01/hackthenorth_twilio_app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/albert-dinh-01/hackthenorth_twilio_app/issues"
+  },
+  "homepage": "https://github.com/albert-dinh-01/hackthenorth_twilio_app#readme"
+}
