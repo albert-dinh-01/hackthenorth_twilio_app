@@ -1,4 +1,7 @@
+// Albert Dinh (September 2021)
+// Courtesy of the quotation data base: https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373
 // return a quote and its author every request
+
 const request = require("request");
 
 const getQuotesInfo = (callback) => {
@@ -22,18 +25,3 @@ const getQuotesInfo = (callback) => {
 };
 
 module.exports = getQuotesInfo;
-
-// --- DEBUGGING --- //
-
-// let quoteObjName;
-// let quoteObjContent;
-// let output;
-
-// getQuotesInfo(({ content, author }) => {
-// 	quoteObjContent = content;
-// 	quoteObjName = author;
-// 	output = "(" + String(quoteObjName) + ") " + String(quoteObjContent);
-// });
-// console.log(output);
-
-// ----------------- //
