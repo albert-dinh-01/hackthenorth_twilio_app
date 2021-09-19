@@ -24,13 +24,16 @@ const getQuotesInfo = (callback) => {
 module.exports = getQuotesInfo;
 
 // --- DEBUGGING --- //
-let quoteObjName;
-let quoteObjContent;
-let output;
 
-getQuotesInfo(({ content, author }) => {
-	quoteObjContent = content;
-	quoteObjName = author;
-	output = "(" + String(quoteObjName) + ") " + String(quoteObjContent);
-});
-console.log(output);
+// let quoteObjName;
+// let quoteObjContent;
+// let output;
+
+// getQuotesInfo(({ content, author }) => {
+// 	quoteObjContent = content;
+// 	quoteObjName = author;
+// 	output = "(" + String(quoteObjName) + ") " + String(quoteObjContent);
+// });
+// console.log(output);
+
+// ----------------- //

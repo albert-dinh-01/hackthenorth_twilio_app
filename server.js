@@ -36,7 +36,8 @@ app.post("/sms", (req, res) => {
 			refactoredTwilio(twiml, output, res);
 		});
 	} else {
-		output = "This is a generic message";
+		output =
+			"This is not a valid command. Please consult the following list of commands: \n\n/quotes: randomly generated quotes\n\n/help: showing available commands";
 		refactoredTwilio(twiml, output, res);
 	}
 });
