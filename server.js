@@ -16,25 +16,29 @@ app.post("/sms", (req, res) => {
 
 	if (input == "/help" || input == "/Help") {
 		output = "This is a help message";
+		refactoredTwilio(twiml, output, res);
 	}
 	// this is the conditional for the quote part
 	else if (input == "/quotes") {
 		getQuotesInfo(({ content, author }) => {
 			quoteObjContent = content;
 			quoteObjName = author;
-
+			output = String(
+				"(" + String(quoteObjName) + ") " + String(quoteObjContent)
+			);
+			refactoredTwilio(twiml, output, res);
 		});
-		output = String(
-			"(" + String(quoteObjName) + ") " + String(quoteObjContent)
-		);
 	} else {
 		output = "This is a generic message";
+		refactoredTwilio(twiml, output, res);
 	}
-
-	twiml.message(output);
-	res.writeHead(200, { "Content-Type": "text/xml" });
-	res.end(twiml.toString());
 });
+
+const refactoredTwilio = (tm, output, res) => {
+	tm.message(output);
+	res.writeHead(200, { "Content-Type": "text/xml" });
+	res.end(tm.toString());
+};
 
 http.createServer(app).listen(port, () => {
 	console.log("Express server listening on port", port);
