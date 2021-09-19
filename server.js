@@ -19,7 +19,7 @@ app.post("/sms", (req, res) => {
 
 	if (input == "/help" || input == "/Help") {
 		output =
-			"Available commands include:\n\n/quotes: randomly generated quotes\n\n/help: showing available commands";
+			"Available commands include:\n\n/quotes: randomly generated quotes\n\n/covid19: covid 19 statistics\n\n/space: space news article\n\n/help: showing available commands";
 		refactoredTwilio(twiml, output, res);
 	}
 	// this is the conditional for the quote part
@@ -69,7 +69,7 @@ app.post("/sms", (req, res) => {
 	// handling the users' mistakes
 	else {
 		output =
-			"This is not a valid command. Please consult the following list of commands: \n\n/quotes: randomly generated quotes\n\n/help: showing available commands";
+			"This is not a valid command. Please consult the following list of commands: \n\n/quotes: randomly generated quotes\n\n/covid19: covid 19 statistics\n\n/space: space news article\n\n/help: showing available commands";
 		refactoredTwilio(twiml, output, res);
 	}
 });
