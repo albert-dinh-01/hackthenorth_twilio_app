@@ -6,7 +6,7 @@ const getQuotesInfo = require("./quotes/fetch_quotes.js");
 const COVIDData = require("./covid19/covid19");
 const getSpaceNews = require("./space_news/fetch_news.js");
 const app = express();
-const port = 1337;
+const port = process.env.PORT || 1337;
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // code starts here
