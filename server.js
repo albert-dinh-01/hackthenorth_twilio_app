@@ -15,7 +15,8 @@ app.post("/sms", (req, res) => {
 	input = req.body.Body;
 
 	if (input == "/help" || input == "/Help") {
-		output = "This is a help message";
+		output =
+			"Available commands include:\n\n/quotes: randomly generated quotes\n\n/help: showing available commands";
 		refactoredTwilio(twiml, output, res);
 	}
 	// this is the conditional for the quote part
