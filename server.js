@@ -23,6 +23,12 @@ app.post("/sms", (req, res) => {
 		getQuotesInfo(({ content, author }) => {
 			quoteObjContent = content;
 			quoteObjName = author;
+
+			// deal with quote without author(s)
+			if (quoteObjName == null) {
+				quoteObjName = "No name";
+			}
+
 			output = String(
 				"(" + String(quoteObjName) + ") " + String(quoteObjContent)
 			);
