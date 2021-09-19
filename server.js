@@ -4,6 +4,7 @@ const MessagingResponse = require("twilio").twiml.MessagingResponse;
 const bodyParser = require("body-parser");
 const getQuotesInfo = require("./quotes/fetch_quotes.js");
 const COVIDData = require("./covid19/covid19");
+const getSpaceNews = require("./space_news/fetch_news.js");
 const app = express();
 const port = 1337;
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -52,6 +53,16 @@ app.post("/sms", (req, res) => {
 					String(totalPeopleFullyVaccinated) +
 					" doses."
 			);
+			refactoredTwilio(twiml, output, res);
+		});
+	}
+	// space news
+	else if (input == "/space") {
+		getSpaceNews(({title, url}) => {
+			if (title == null) {
+				title = "No title";
+			};
+			output = String(title + "\n\n" + url);
 			refactoredTwilio(twiml, output, res);
 		});
 	}
